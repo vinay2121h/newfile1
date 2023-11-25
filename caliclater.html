@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .contai{
+            background-color: antiquewhite;
+            width: 100vw;
+            background-size: cover;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           
+           height: 100vh;
+         
+            
+        }
+        .inner{
+            background-color: rgb(254, 254, 254,0.5);
+            padding:20px;
+            border-radius: 8px;
+            box-shadow: inset 5px -5px 12px rgb(255, 254, 254),
+                        inset 5px 5px 12px rgb(3, 2, 2);
+                        
+
+        }
+        .but{
+            width: 39px;
+            height: 19px;
+            margin-top: 10px;
+            align-items: center;
+            text-align: center;
+            font-size: 13px;
+            background-color: wheat;
+            margin: 8px;
+
+            box-shadow: inset 5px -5px 12px rgb(255, 254, 254),
+                        inset 5px 5px 12px rgb(3, 2, 2);
+            border: none;
+            border-radius: 50%;            
+
+        }
+        .kk{
+            position: relative;
+        }
+        .bb{
+            width: 39px;
+            height: 125px;
+            position: absolute;
+            top:0px;
+           
+            margin-left: 5px;
+            margin-top: 20px;
+            align-items: center;
+            text-align: center;
+            font-size: 13px;
+            background-color: wheat;
+            margin: 8px;
+
+            box-shadow: inset 5px -5px 12px rgb(255, 254, 254),
+                        inset 5px 5px 12px rgb(3, 2, 2);
+            border: none;
+            border-radius: 50%;  
+        }
+        .inn{
+            text-align: right;
+            border: none;
+            border-radius: 30px;
+            height:40px;
+            grid-column: span 4;
+            box-shadow: inset -5px -4px 15px wheat, inset -5px -5px 12px black;
+            color:rgb(144, 102, 46);
+            width: 95%;
+        
+           
+        }
+    </style>
+</head>
+<body>
+    <div class="contai">
+        <div class="inner">
+            <input type="text" placeholder="0" class="inn" id="inp">
+            <div>
+                <button class="but" onclick="cal('+')">+</button>
+                <button class="but" onclick="cal('-')">-</button>
+                <button class="but" onclick="cal('*')">x</button>
+                <button class="but" onclick="cal('%')">%</button>
+            </div>
+            <div class="kk">
+                <button class="but" onclick="cal('7')">7</button>
+                <button class="but" onclick="cal('8')">8</button>
+                <button class="but" onclick="cal('9')">9</button>
+                <button class="bb" onclick="call('=')">=</button>
+            </div>
+            <div>
+                <button class="but" onclick="cal('4')">4</button>
+                <button class="but" onclick="cal('5')">5</button>
+                <button class="but" onclick="cal('6')">6</button>
+                
+            </div>
+            <div>
+                <button class="but" onclick="cal('1')">1</button>
+                <button class="but" onclick="cal('2')">2</button>
+                <button class="but" onclick="cal('3')">3</button>
+                
+            </div>
+            <div>
+                <button class="but" onclick="cal('0')">0</button>
+                <button class="but" onclick="cal('.')">.</button>
+                <button class="but" onclick="clr()">AC</button>
+                
+            </div>
+
+        </div>
+
+    </div>
+    <script>
+        let outputScreen=document.getElementById("inp");
+        function cal(num){
+            outputScreen.value += num;
+        }
+        function call(){
+            try{
+                outputScreen.value=eval(outputScreen.value);
+
+            }
+            catch(err)
+            {
+                alert("Invalid input")
+            }
+        }
+        function clr(){
+            outputScreen.value="";
+        }
+    </script>
+</body>
+</html>
